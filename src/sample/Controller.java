@@ -19,13 +19,10 @@ public class Controller implements Initializable {
 
     Rectangle rectangle = new Rectangle(50,50,200,200);
 
-    Timer t = new Timer(200, new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            System.out.println("Tick-tack");
-            drawRectangle(rectangle);
-            rectangle.setLocation(rectangle.x+10,rectangle.y+10);
-        }
+    Timer t = new Timer(200, e -> {
+        System.out.println("Tick-tack");
+        drawRectangle(rectangle);
+        rectangle.setLocation(rectangle.x+10,rectangle.y+10);
     });
     @Override
     public void initialize(URL location, ResourceBundle resources) {
